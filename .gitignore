@@ -92,3 +92,4 @@ ENV/
 data/
 *.zip
 .idea/
+/lib_external/
