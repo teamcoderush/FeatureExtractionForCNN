@@ -73,7 +73,4 @@ WORKERS = 5    # default is 5
 
 # Train the model
 model = gensim.models.Word2Vec(lst, min_count=MIN_COUNT, size=SIZE, workers=WORKERS)
-
-# Test Results
-# print(model.wv['restaurant'])
-print(model.wv.most_similar(positive=['good', 'taste'], negative=['bad']))
+model.save('word2vec')

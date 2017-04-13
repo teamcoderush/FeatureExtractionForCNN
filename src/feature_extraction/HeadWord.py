@@ -11,13 +11,11 @@ train = dataset.groupby('text', as_index=False)['category'].agg({'categories': (
 
 dependancy_parser = StanfordDependencyParser(path_to_jar=path_to_jar, path_to_models_jar=path_to_models_jar)
 
+_out = []
+
 for i in train.text:
     result = dependancy_parser.raw_parse(i)
     for parse in result:
-        print(parse.tree()._label)
+        _out.append(parse.tree()._label)
+        #print(parse.tree()._label)
 
-#
-#
-#
-# for parse in result:
-#     print(parse.tree()._label)
